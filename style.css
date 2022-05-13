@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'caviar';
+    src: url("fonts/caviar-dreams.ttf");
+}
+body,
+html {
+    /*background: #1d2b64;*/
+    height: 100%;
+    overflow: hidden;
+    font-family: "caviar";
+}
+
+body {
+    align-items: center;
+    display: flex;
+    justify-content: center
+}
+
+.slider {
+    overflow: hidden;
+    max-width: min(70vh, 100vw);
+}
+img{
+    max-height: min(70vh, 100vw);
+    width: auto;
+}
+
+.slides {
+    display: flex;
+    flex-direction: row;
+    transition: transform 1s ease
+}
+
+.slide {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide__mem img {
+    width: min(70vh, 100vw);
+}
+.slide__description{
+    padding-bottom: 10px;
+}
+
+/* кнопки навигации*/
+
+.navigation {
+    z-index: 2;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.navigation .navigation__button {
+    border-radius: 50%;
+    font-size: 0;
+    line-height: 50px;
+    padding: 20px;
+    outline: 7px solid #1d2b64;
+    outline-offset: -20px;
+}
+
+.navigation__button:hover {
+    outline: 7px solid rgb(161, 219, 255);
+    outline-offset: -20px
+}
+
+
+#mem1:target~.navigation .navigation__button:first-child,
+#mem2:target~.navigation .navigation__button:nth-child(2),
+#mem3:target~.navigation .navigation__button:nth-child(3),
+#mem4:target~.navigation .navigation__button:nth-child(4),
+#mem5:target~.navigation .navigation__button:nth-child(5),
+#mem6:target~.navigation .navigation__button:nth-child(6),
+#mem7:target~.navigation .navigation__button:nth-child(7),
+#mem8:target~.navigation .navigation__button:nth-child(8) {    
+    outline: 3px solid #1d2b64;
+    outline-offset: -16px;
+}
+
+#mem1:target~.navigation .navigation__button:first-child:hover,
+#mem2:target~.navigation .navigation__button:nth-child(2):hover,
+#mem3:target~.navigation .navigation__button:nth-child(3):hover,
+#mem4:target~.navigation .navigation__button:nth-child(4):hover,
+#mem5:target~.navigation .navigation__button:nth-child(5):hover,
+#mem6:target~.navigation .navigation__button:nth-child(6):hover,
+#mem7:target~.navigation .navigation__button:nth-child(7):hover,
+#mem8:target~.navigation .navigation__button:nth-child(8):hover {
+    outline: 7px solid rgb(161, 219, 255);
+    outline-offset: -20px
+}
+
+#mem1:target~.slides #memo1,
+#mem2:target~.slides #memo2,
+#mem3:target~.slides #memo3,
+#mem4:target~.slides #memo4,
+#mem5:target~.slides #memo5,
+#mem6:target~.slides #memo6,
+#mem7:target~.slides #memo7,
+#mem8:target~.slides #memo8 {
+    animation: slidein 1.5s ease-in-out
+}
+#mem1:target~.slides #description1,
+#mem2:target~.slides #description2,
+#mem3:target~.slides #description3,
+#mem4:target~.slides #description4,
+#mem5:target~.slides #description5,
+#mem6:target~.slides #description6,
+#mem7:target~.slides #description7,
+#mem8:target~.slides #description8 {
+    animation: slideintxt 1.5s ease-in-out
+}
+
+#mem1:target~.slides {
+    transform: translateX(0)
+}
+#mem2:target~.slides {
+    transform: translateX(-100%)
+}
+#mem3:target~.slides {
+    transform: translateX(-200%)
+}
+#mem4:target~.slides {
+    transform: translateX(-300%)
+}
+#mem5:target~.slides {
+    transform: translateX(-400%)
+}
+#mem6:target~.slides {
+    transform: translateX(-500%)
+}
+#mem7:target~.slides {
+    transform: translateX(-600%)
+}
+#mem8:target~.slides {
+    transform: translateX(-700%)
+}
+
+@keyframes slidein {
+    0% {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes slideintxt {
+
+    0%,
+    50% {
+        opacity: 0;
+        transform: translateY(-100%)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+
+/* кнопки навигации*/
+
