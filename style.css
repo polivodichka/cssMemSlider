@@ -2,70 +2,114 @@
     font-family: 'caviar';
     src: url("fonts/caviar-dreams.ttf");
 }
+
+:root {
+    --main-color: #d8cce4;
+    --mobile: 768px;
+}
+
 body,
 html {
-    /*background: #1d2b64;*/
-    height: 100%;
-    overflow: hidden;
     font-family: "caviar";
+    height: 100%;
+    margin: 0;
 }
 
 body {
     align-items: center;
     display: flex;
-    justify-content: center
+    justify-content: center;
+    background:
+        radial-gradient(black 3px, transparent 4px),
+        radial-gradient(black 3px, transparent 4px),
+        linear-gradient(#fff 4px, transparent 0),
+        linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+        linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+        #fff;
+    background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 }
 
 .slider {
     overflow: hidden;
-    max-width: min(70vh, 100vw);
-}
-img{
-    max-height: min(70vh, 100vw);
-    width: auto;
+    max-width: 520px;
+    height: 550px;
+    border-radius: 9px;
+    border: 3px solid black;
 }
 
 .slides {
     display: flex;
     flex-direction: row;
-    transition: transform 1s ease
+    transition: transform 1s ease;
+    align-items: flex-end;
+    position: relative;
+    z-index: -2;
 }
 
 .slide {
     background-color: #fff;
     display: flex;
+    padding: 10px;
     flex-direction: column;
     justify-content: center;
+    z-index: 1;
+    min-width: 500px;
+}
+
+.slide__mem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 500px;
 }
 
 .slide__mem img {
-    width: min(70vh, 100vw);
+    max-height: 100%;
+    max-width: 100%;
 }
-.slide__description{
-    padding-bottom: 10px;
+
+.slide__description {
+    padding-top: 10px;
+    max-width: 50%;
+    height: 70px;
+    transition:  text-align 0.5s ease,
+    margin 0.5s ease;
 }
 
 /* кнопки навигации*/
 
 .navigation {
-    z-index: 2;
-    padding: 10px 0;
+    z-index: 15;
+    padding-bottom: 30px;
     width: 100%;
-    text-align: center;
+    text-align: right;
+    margin-top: -93px;
+    margin-left: -10px;
 }
 
 .navigation .navigation__button {
     border-radius: 50%;
     font-size: 0;
     line-height: 50px;
-    padding: 20px;
-    outline: 7px solid #1d2b64;
+    padding: 20px 10px;
+    outline: 7px solid black;
     outline-offset: -20px;
+    transition: color 0.4s ease-in-out;
 }
 
 .navigation__button:hover {
     outline: 7px solid rgb(161, 219, 255);
     outline-offset: -20px
+}
+
+.navigation__button:active {
+    outline: 3px solid rgb(161, 219, 255);
+    margin-left: -4px;
+    margin-right: -4px;
+    padding: 14px;
+    outline-offset: -10px
 }
 
 
@@ -76,9 +120,12 @@ img{
 #mem5:target~.navigation .navigation__button:nth-child(5),
 #mem6:target~.navigation .navigation__button:nth-child(6),
 #mem7:target~.navigation .navigation__button:nth-child(7),
-#mem8:target~.navigation .navigation__button:nth-child(8) {    
-    outline: 3px solid #1d2b64;
-    outline-offset: -16px;
+#mem8:target~.navigation .navigation__button:nth-child(8) {
+    outline: 3px solid black;
+    margin-left: -4px;
+    margin-right: -4px;
+    padding: 14px;
+    outline-offset: -10px
 }
 
 #mem1:target~.navigation .navigation__button:first-child:hover,
@@ -103,6 +150,7 @@ img{
 #mem8:target~.slides #memo8 {
     animation: slidein 1.5s ease-in-out
 }
+
 #mem1:target~.slides #description1,
 #mem2:target~.slides #description2,
 #mem3:target~.slides #description3,
@@ -117,24 +165,31 @@ img{
 #mem1:target~.slides {
     transform: translateX(0)
 }
+
 #mem2:target~.slides {
     transform: translateX(-100%)
 }
+
 #mem3:target~.slides {
     transform: translateX(-200%)
 }
+
 #mem4:target~.slides {
     transform: translateX(-300%)
 }
+
 #mem5:target~.slides {
     transform: translateX(-400%)
 }
+
 #mem6:target~.slides {
     transform: translateX(-500%)
 }
+
 #mem7:target~.slides {
     transform: translateX(-600%)
 }
+
 #mem8:target~.slides {
     transform: translateX(-700%)
 }
@@ -154,7 +209,7 @@ img{
     0%,
     50% {
         opacity: 0;
-        transform: translateY(-100%)
+        transform: translateY(50%)
     }
 
     to {
@@ -163,6 +218,42 @@ img{
     }
 }
 
+@media screen and (max-width: 768px) {
 
-/* кнопки навигации*/
+    .slider {
+        max-width: min(520px, calc(80vw + 20px));
+        height: min(550px, 88vw);
+    }
 
+    .slide {
+        min-width: min(500px, 80vw);
+        height: min(550px, 88vw);
+    }
+
+    .slide__mem {
+        height: min(450px, 72vw);
+        width: min(500px, 80vw);
+    }
+
+    .slide__mem img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .slide__description {
+        padding-top: min(35px, 5.6vw);
+        max-width: 100%;
+        text-align:center;
+        height: min(70px, 11.2vw);
+        
+    }
+
+    /* кнопки навигации*/
+
+    .navigation {
+        text-align: center;
+        /*margin-top: max(-115px, -19.2vw);*/
+        transform: translateY(-100%);
+        margin-left: 0;
+    }
+}
