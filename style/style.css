@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'caviar';
-    src: url("fonts/caviar-dreams.ttf");
+    src: url("../assets/fonts/caviar-dreams.ttf");
 }
 
 body,
@@ -90,7 +90,7 @@ body {
     border-radius: 50%;
     font-size: 0;
     line-height: 50px;
-    padding: 14px 10px;
+    padding: 20px 10px;
     outline: 7px solid black;
     outline-offset: -20px;
     transition: color 0.4s ease-in-out;
@@ -103,10 +103,10 @@ body {
 
 .navigation__button:active {
     outline: 3px solid rgb(161, 219, 255);
-    margin-left: -4px;
-    margin-right: -4px;
-    padding: 14px;
-    outline-offset: -10px
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 20px;
+    outline-offset: -16px;
 }
 
 
@@ -119,10 +119,10 @@ body {
 #mem7:target~.navigation .navigation__button:nth-child(7),
 #mem8:target~.navigation .navigation__button:nth-child(8) {
     outline: 3px solid black;
-    margin-left: -4px;
-    margin-right: -4px;
-    padding: 14px;
-    outline-offset: -10px
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 20px;
+    outline-offset: -16px;
 }
 
 #mem1:target~.navigation .navigation__button:first-child:hover,
