@@ -3,11 +3,6 @@
     src: url("fonts/caviar-dreams.ttf");
 }
 
-:root {
-    --main-color: #d8cce4;
-    --mobile: 768px;
-}
-
 body,
 html {
     font-family: "caviar";
@@ -32,14 +27,15 @@ body {
 
 .slider {
     overflow: hidden;
-    max-width: 520px;
-    height: 550px;
+    max-width: min(calc(80vh + 20px), calc(80vw + 20px));
+    height: min(88vh, 88vw);
     border-radius: 9px;
     border: 3px solid black;
     background-color: #fff;
 }
 
 .slides {
+    height: 100%;
     display: flex;
     flex-direction: row;
     transition: transform 1s ease;
@@ -53,15 +49,16 @@ body {
     flex-direction: column;
     justify-content: center;
     z-index: -1;
-    min-width: 500px;
+    height: calc(100% - 20px);
+    min-width: min(80vh, 80vw);
 }
 
 .slide__mem {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 450px;
-    width: 500px;
+    height: calc(85% - 10px);
+    width: min(80vh, 80vw);
 }
 
 .slide__mem img {
@@ -72,7 +69,7 @@ body {
 .slide__description {
     margin-top: 10px;
     max-width: 50%;
-    height: 70px;
+    height: 15%;
     transition: text-align 0.5s ease,
         margin 0.5s ease;
 }
@@ -83,7 +80,10 @@ body {
     z-index: 15;
     width: 100%;
     text-align: right;
-    transform: translate(-10px, -93px);
+    margin: auto 0;
+    height: 15%;
+    transform: translate(-10px, calc(-100% - 20px));
+    transition: translate 0.2s ease-in-out;
 
 }
 
@@ -221,67 +221,11 @@ body {
     0%,
     50% {
         opacity: 0;
-        transform: translateY(50%)
+        transform: translateY(70%)
     }
 
     to {
         opacity: 1;
-        transform: translateY(28px)
-    }
-}
-
-@media screen and (max-width: 768px) {
-
-    .slider {
-        max-width: min(calc(80vh + 20px), calc(80vw + 20px));
-        height: min(88vh, 88vw);
-    }
-
-    .slides {
-        height: 100%;
-    }
-
-    .slide {
-        height: calc(100% - 20px);
-        min-width: min(80vh, 80vw);
-    }
-
-    .slide__mem {
-        height: calc(100% - 80px);
-        width: min(80vh, 80vw);
-        align-items: flex-end;
-    }
-
-    .slide__mem img {
-        max-height: 100%;
-        max-width: 100%;
-    }
-
-    .slide__description {
-        padding: 0;
-        max-width: 100%;
-        text-align: center;
-        height: 70px;
-        transform: translateY(28px);
-        transition: margin 0s;
-    }
-
-    #mem1:target~.slides #description1,
-    #mem2:target~.slides #description2,
-    #mem3:target~.slides #description3,
-    #mem4:target~.slides #description4,
-    #mem5:target~.slides #description5,
-    #mem6:target~.slides #description6,
-    #mem7:target~.slides #description7,
-    #mem8:target~.slides #description8 {
-        animation: slideintxt2 1.5s ease-in-out
-    }
-
-    /* кнопки навигации*/
-
-    .navigation {
-        text-align: center;
-        transform: translate(0px, -93px);
-        margin-left: 0;
+        transform: translateY(25px)
     }
 }
