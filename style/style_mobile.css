@@ -29,7 +29,7 @@
         max-width: 100%;
         text-align: center;
         height: 20%;
-        transform: translate(0px, 25px);
+        transform: translate(0px, 28px);
     }
 
     .navigation {
@@ -37,6 +37,27 @@
         height: 20%;
         transform: translateX(0px, calc(-100% - 20px));
         margin-left: 0;
+    }
+
+    .navigation .navigation__button {
+        margin: 0 5px;
+        padding: 20px;
+    }
+
+    .navigation__button:active{
+        
+    }
+    #mem1:target~.navigation .navigation__button:first-child,
+    #mem2:target~.navigation .navigation__button:nth-child(2),
+    #mem3:target~.navigation .navigation__button:nth-child(3),
+    #mem4:target~.navigation .navigation__button:nth-child(4),
+    #mem5:target~.navigation .navigation__button:nth-child(5),
+    #mem6:target~.navigation .navigation__button:nth-child(6),
+    #mem7:target~.navigation .navigation__button:nth-child(7),
+    #mem8:target~.navigation .navigation__button:nth-child(8) {
+
+        margin-left: 5px;
+        margin-right: 5px;
     }
 
     #mem1:target~.slides #description1,
