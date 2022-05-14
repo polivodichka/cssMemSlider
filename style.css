@@ -36,6 +36,7 @@ body {
     height: 550px;
     border-radius: 9px;
     border: 3px solid black;
+    background-color: #fff;
 }
 
 .slides {
@@ -44,16 +45,14 @@ body {
     transition: transform 1s ease;
     align-items: flex-end;
     position: relative;
-    z-index: -2;
 }
 
 .slide {
-    background-color: #fff;
     display: flex;
     padding: 10px;
     flex-direction: column;
     justify-content: center;
-    z-index: 1;
+    z-index: -1;
     min-width: 500px;
 }
 
@@ -71,22 +70,21 @@ body {
 }
 
 .slide__description {
-    padding-top: 10px;
+    margin-top: 10px;
     max-width: 50%;
     height: 70px;
-    transition:  text-align 0.5s ease,
-    margin 0.5s ease;
+    transition: text-align 0.5s ease,
+        margin 0.5s ease;
 }
 
 /* кнопки навигации*/
 
 .navigation {
     z-index: 15;
-    padding-bottom: 30px;
     width: 100%;
     text-align: right;
-    margin-top: -93px;
-    margin-left: -10px;
+    transform: translate(-10px, -93px);
+
 }
 
 .navigation .navigation__button {
@@ -218,21 +216,40 @@ body {
     }
 }
 
+@keyframes slideintxt2 {
+
+    0%,
+    50% {
+        opacity: 0;
+        transform: translateY(50%)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(28px)
+    }
+}
+
 @media screen and (max-width: 768px) {
 
     .slider {
-        max-width: min(520px, calc(80vw + 20px));
-        height: min(550px, 88vw);
+        max-width: min(calc(80vh + 20px), calc(80vw + 20px));
+        height: min(88vh, 88vw);
+    }
+
+    .slides {
+        height: 100%;
     }
 
     .slide {
-        min-width: min(500px, 80vw);
-        height: min(550px, 88vw);
+        height: calc(100% - 20px);
+        min-width: min(80vh, 80vw);
     }
 
     .slide__mem {
-        height: min(450px, 72vw);
-        width: min(500px, 80vw);
+        height: calc(100% - 80px);
+        width: min(80vh, 80vw);
+        align-items: flex-end;
     }
 
     .slide__mem img {
@@ -241,19 +258,30 @@ body {
     }
 
     .slide__description {
-        padding-top: min(35px, 5.6vw);
+        padding: 0;
         max-width: 100%;
-        text-align:center;
-        height: min(70px, 11.2vw);
-        
+        text-align: center;
+        height: 70px;
+        transform: translateY(28px);
+        transition: margin 0s;
+    }
+
+    #mem1:target~.slides #description1,
+    #mem2:target~.slides #description2,
+    #mem3:target~.slides #description3,
+    #mem4:target~.slides #description4,
+    #mem5:target~.slides #description5,
+    #mem6:target~.slides #description6,
+    #mem7:target~.slides #description7,
+    #mem8:target~.slides #description8 {
+        animation: slideintxt2 1.5s ease-in-out
     }
 
     /* кнопки навигации*/
 
     .navigation {
         text-align: center;
-        /*margin-top: max(-115px, -19.2vw);*/
-        transform: translateY(-100%);
+        transform: translate(0px, -93px);
         margin-left: 0;
     }
 }
