@@ -35,7 +35,7 @@
     .navigation {
         text-align: center;
         height: 20%;
-        transform: translateX(0px, calc(-100% - 20px));
+        transform: translate(0px, calc(-100% - 20px));
         margin-left: 0;
     }
 
@@ -43,7 +43,7 @@
         margin: 0 0;
         padding: 20px;
     }
-    
+
     #mem1:target~.navigation .navigation__button:first-child,
     #mem2:target~.navigation .navigation__button:nth-child(2),
     #mem3:target~.navigation .navigation__button:nth-child(3),
