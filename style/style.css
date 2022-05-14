@@ -93,7 +93,7 @@ body {
     padding: 20px 10px;
     outline: 7px solid black;
     outline-offset: -20px;
-    transition: color 0.4s ease-in-out;
+    transition: margin 0.4s ease-in-out;
 }
 
 .navigation__button:hover {
