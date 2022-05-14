@@ -75,7 +75,6 @@ body {
 }
 
 /* кнопки навигации*/
-
 .navigation {
     z-index: 15;
     width: 100%;
@@ -191,41 +190,4 @@ body {
 #mem8:target~.slides {
     transform: translateX(-700%)
 }
-
-@keyframes slidein {
-    0% {
-        transform: scale(0)
-    }
-
-    to {
-        transform: scale(1)
-    }
-}
-
-@keyframes slideintxt {
-
-    0%,
-    50% {
-        opacity: 0;
-        transform: translateY(50%)
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0)
-    }
-}
-
-@keyframes slideintxt2 {
-
-    0%,
-    50% {
-        opacity: 0;
-        transform: translateY(70%)
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(25px)
-    }
-}
+    

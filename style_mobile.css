@@ -32,6 +32,13 @@
         transform: translate(0px, 25px);
     }
 
+    .navigation {
+        text-align: center;
+        height: 20%;
+        transform: translateX(0px, calc(-100% - 20px));
+        margin-left: 0;
+    }
+
     #mem1:target~.slides #description1,
     #mem2:target~.slides #description2,
     #mem3:target~.slides #description3,
@@ -40,30 +47,6 @@
     #mem6:target~.slides #description6,
     #mem7:target~.slides #description7,
     #mem8:target~.slides #description8 {
-        animation: slideintxt2 1.5s ease-in-out
-    }
-
-    #mem1:target~.navigation .navigation__button:first-child:focus,
-    #mem2:target~.navigation .navigation__button:nth-child(2):focus,
-    #mem3:target~.navigation .navigation__button:nth-child(3):focus,
-    #mem4:target~.navigation .navigation__button:nth-child(4):focus,
-    #mem5:target~.navigation .navigation__button:nth-child(5):focus,
-    #mem6:target~.navigation .navigation__button:nth-child(6):focus,
-    #mem7:target~.navigation .navigation__button:nth-child(7):focus,
-    #mem8:target~.navigation .navigation__button:nth-child(8):focus {
-        outline: 3px solid black;
-        margin-left: -4px;
-        margin-right: -4px;
-        padding: 14px;
-        outline-offset: -10px
-    }
-
-    /* кнопки навигации*/
-
-    .navigation {
-        text-align: center;
-        height: 20%;
-        transform: translateX(0px, calc(-100% - 20px));
-        margin-left: 0;
+        animation: slideintxtMobile 1.5s ease-in-out
     }
 }
