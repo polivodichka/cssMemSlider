@@ -40,13 +40,10 @@
     }
 
     .navigation .navigation__button {
-        margin: 0 5px;
+        margin: 0 0;
         padding: 20px;
     }
-
-    .navigation__button:active{
-        
-    }
+    
     #mem1:target~.navigation .navigation__button:first-child,
     #mem2:target~.navigation .navigation__button:nth-child(2),
     #mem3:target~.navigation .navigation__button:nth-child(3),
@@ -56,8 +53,8 @@
     #mem7:target~.navigation .navigation__button:nth-child(7),
     #mem8:target~.navigation .navigation__button:nth-child(8) {
 
-        margin-left: 5px;
-        margin-right: 5px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     #mem1:target~.slides #description1,
