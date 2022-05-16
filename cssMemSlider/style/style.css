@@ -137,7 +137,8 @@ body {
 .navigation .navigation__button {
     border-radius: 50%;
     font-size: 0;
-    padding: min(4vh, 4vw)  min(2vh, 2vw) ;
+    padding: min(4vh, 4vw);
+    margin: 0  calc(min(2vh, 2vw) * -1);
     outline: min(1.4vh, 1.4vw)  solid black;
     outline-offset: calc(min(4vh, 4vw) * -1);
 }
