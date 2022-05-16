@@ -37,10 +37,10 @@
 
     .navigation {
         text-align: center;
-        height: 20%;
-        -webkit-transform: translate(0px, calc(-100% - min(2vh, 2vw) ));
-            -ms-transform: translate(0px, calc(-100% - min(2vh, 2vw) ));
-                transform: translate(0px, calc(-100% - min(2vh, 2vw) ));
+        height: 10%;
+        -webkit-transform: translate(0px, calc(-200% - min(2vh, 2vw) ));
+            -ms-transform: translate(0px, calc(-200% - min(2vh, 2vw) ));
+                transform: translate(0px, calc(-200% - min(2vh, 2vw) ));
         margin-left: 0;
         width: 100%;
     }
