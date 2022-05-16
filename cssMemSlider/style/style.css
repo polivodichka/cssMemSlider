@@ -96,6 +96,9 @@ body {
             align-items: center;
     height: calc(85% - min(2vh, 2vw) );
     width: min(80vh, 80vw);
+    border-width: 1px;
+    border-color: #a4a4a4;
+    border-style: none dashed;
 }
 
 .slide__mem img {
