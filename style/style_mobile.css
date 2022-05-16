@@ -1,7 +1,7 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (max-height: 500px) {
 
     .slider {
-        max-width: min(calc(80vh + 20px), calc(80vw + 20px));
+        max-width: min(calc(80vh + min(4vh, 4vw) ), calc(80vw + min(4vh, 4vw) ));
         height: min(88vh, 88vw);
     }
 
@@ -10,12 +10,12 @@
     }
 
     .slide {
-        height: calc(100% - 20px);
+        height: calc(100% - min(4vh, 4vw) );
         min-width: min(80vh, 80vw);
     }
 
     .slide__mem {
-        height: calc(80% - 10px);
+        height: calc(80% - min(2vh, 2vw) );
         width: min(80vh, 80vw);
         align-items: flex-end;
     }
@@ -27,7 +27,6 @@
 
     .slide__description {
         max-width: 100%;
-        text-align: center;
         height: 20%;
         transform: translate(0px, 28px);
     }
@@ -35,13 +34,14 @@
     .navigation {
         text-align: center;
         height: 20%;
-        transform: translate(0px, calc(-100% - 20px));
+        transform: translate(0px, calc(-100% - min(2vh, 2vw) ));
         margin-left: 0;
+        width: 100%;
     }
 
     .navigation .navigation__button {
         margin: 0 0;
-        padding: 20px;
+        padding: min(4vh, 4vw) ;
     }
 
     #mem1:target~.navigation .navigation__button:first-child,
@@ -55,38 +55,6 @@
 
         margin-left: 0;
         margin-right: 0;
-    }
-
-    #mem1:target~.slides #description1,
-    #mem2:target~.slides #description2,
-    #mem3:target~.slides #description3,
-    #mem4:target~.slides #description4,
-    #mem5:target~.slides #description5,
-    #mem6:target~.slides #description6,
-    #mem7:target~.slides #description7,
-    #mem8:target~.slides #description8 {
-        animation: slideintxtMobile 1.5s ease-in-out
-    }
-}
-@media screen and (max-width: 423px) {
-
-    .navigation .navigation__button {
-        margin-left: -5px;
-        margin-right: -5px;
-        padding: 20px;
-    }
-
-    #mem1:target~.navigation .navigation__button:first-child,
-    #mem2:target~.navigation .navigation__button:nth-child(2),
-    #mem3:target~.navigation .navigation__button:nth-child(3),
-    #mem4:target~.navigation .navigation__button:nth-child(4),
-    #mem5:target~.navigation .navigation__button:nth-child(5),
-    #mem6:target~.navigation .navigation__button:nth-child(6),
-    #mem7:target~.navigation .navigation__button:nth-child(7),
-    #mem8:target~.navigation .navigation__button:nth-child(8) {
-
-        margin-left: -5px;
-        margin-right: -5px;
     }
 
     #mem1:target~.slides #description1,

@@ -15,11 +15,11 @@ body {
     display: flex;
     justify-content: center;
     background:
-        radial-gradient(black 3px, transparent 4px),
-        radial-gradient(black 3px, transparent 4px),
+        radial-gradient(black min(0.6vh, 0.6vw) , transparent 4px),
+        radial-gradient(black min(0.6vh, 0.6vw) , transparent 4px),
         linear-gradient(#fff 4px, transparent 0),
-        linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
-        linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+        linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 7min(1.4vh, 1.4vw) , transparent 109px),
+        linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 7min(1.4vh, 1.4vw) , transparent 78px, transparent 109px),
         #fff;
     background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
     background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
@@ -27,10 +27,10 @@ body {
 
 .slider {
     overflow: hidden;
-    max-width: min(calc(80vh + 20px), calc(80vw + 20px));
+    max-width: min(calc(80vh + min(4vh, 4vw) ), calc(80vw + min(4vh, 4vw) ));
     height: min(88vh, 88vw);
     border-radius: 9px;
-    border: 3px solid black;
+    border: min(0.6vh, 0.6vw)  solid black;
     background-color: #fff;
 }
 
@@ -45,11 +45,11 @@ body {
 
 .slide {
     display: flex;
-    padding: 10px;
+    padding: min(2vh, 2vw) ;
     flex-direction: column;
     justify-content: center;
     z-index: -1;
-    height: calc(100% - 20px);
+    height: calc(100% - min(4vh, 4vw) );
     min-width: min(80vh, 80vw);
 }
 
@@ -57,7 +57,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(85% - 10px);
+    height: calc(85% - min(2vh, 2vw) );
     width: min(80vh, 80vw);
 }
 
@@ -67,8 +67,9 @@ body {
 }
 
 .slide__description {
-    margin-top: 10px;
+    margin-top: min(2vh, 2vw) ;
     max-width: 50%;
+    font-size: 1rem;
     height: 15%;
     transition: text-align 0.5s ease,
         margin 0.5s ease;
@@ -77,11 +78,11 @@ body {
 /* кнопки навигации*/
 .navigation {
     z-index: 15;
-    width: 100%;
+    width: 50%;
     text-align: right;
     margin: auto 0;
     height: 15%;
-    transform: translate(-10px, calc(-100% - 20px));
+    transform: translate(calc(100% - min(2vh, 2vw) ), calc(-100% - min(2vh, 2vw) ));
     transition: translate 0.2s ease-in-out;
     transition: none;
 }
@@ -89,23 +90,22 @@ body {
 .navigation .navigation__button {
     border-radius: 50%;
     font-size: 0;
-    line-height: 50px;
-    padding: 20px 10px;
-    outline: 7px solid black;
-    outline-offset: -20px;
+    padding: min(4vh, 4vw)  min(2vh, 2vw) ;
+    outline: min(1.4vh, 1.4vw)  solid black;
+    outline-offset: calc(min(7vh, 7vw) * -1);
 }
 
 .navigation__button:hover {
-    outline: 7px solid rgb(161, 219, 255);
-    outline-offset: -20px
+    outline: min(1.4vh, 1.4vw)  solid rgb(161, 219, 255);
+    outline-offset: calc(min(7vh, 7vw) * -1)
 }
 
 .navigation__button:active {
-    outline: 3px solid rgb(161, 219, 255);
-    margin-left: -10px;
-    margin-right: -10px;
-    padding: 20px;
-    outline-offset: -16px;
+    outline: min(0.6vh, 0.6vw)  solid rgb(161, 219, 255);
+    margin-left: calc(min(2vh, 2vw) * -1);
+    margin-right: calc(min(2vh, 2vw) * -1);
+    padding: min(4vh, 4vw) ;
+    outline-offset: calc(min(3.2vh, 3.2vw) * -1);
 }
 
 
@@ -117,11 +117,11 @@ body {
 #mem6:target~.navigation .navigation__button:nth-child(6),
 #mem7:target~.navigation .navigation__button:nth-child(7),
 #mem8:target~.navigation .navigation__button:nth-child(8) {
-    outline: 3px solid black;
-    margin-left: -10px;
-    margin-right: -10px;
-    padding: 20px;
-    outline-offset: -16px;
+    outline: min(0.6vh, 0.6vw)  solid black;
+    margin-left: calc(min(2vh, 2vw) * -1);
+    margin-right: calc(min(2vh, 2vw) * -1);
+    padding: min(4vh, 4vw) ;
+    outline-offset: calc(min(3.2vh, 3.2vw) * -1);
 }
 
 #mem1:target~.navigation .navigation__button:first-child:hover,
@@ -132,8 +132,8 @@ body {
 #mem6:target~.navigation .navigation__button:nth-child(6):hover,
 #mem7:target~.navigation .navigation__button:nth-child(7):hover,
 #mem8:target~.navigation .navigation__button:nth-child(8):hover {
-    outline: 7px solid rgb(161, 219, 255);
-    outline-offset: -20px
+    outline: min(1.4vh, 1.4vw)  solid rgb(161, 219, 255);
+    outline-offset: calc(min(4vh, 4vw) * -1)
 }
 
 #mem1:target~.slides #memo1,
