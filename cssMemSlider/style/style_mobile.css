@@ -17,7 +17,9 @@
     .slide__mem {
         height: calc(80% - min(2vh, 2vw) );
         width: min(80vh, 80vw);
-        align-items: flex-end;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
     }
 
     .slide__mem img {
@@ -28,13 +30,17 @@
     .slide__description {
         max-width: 100%;
         height: 20%;
-        transform: translate(0px, 28px);
+        -webkit-transform: translate(0px, 28px);
+            -ms-transform: translate(0px, 28px);
+                transform: translate(0px, 28px);
     }
 
     .navigation {
         text-align: center;
         height: 20%;
-        transform: translate(0px, calc(-100% - min(2vh, 2vw) ));
+        -webkit-transform: translate(0px, calc(-100% - min(2vh, 2vw) ));
+            -ms-transform: translate(0px, calc(-100% - min(2vh, 2vw) ));
+                transform: translate(0px, calc(-100% - min(2vh, 2vw) ));
         margin-left: 0;
         width: 100%;
     }
@@ -65,6 +71,7 @@
     #mem6:target~.slides #description6,
     #mem7:target~.slides #description7,
     #mem8:target~.slides #description8 {
-        animation: slideintxtMobile 1.5s ease-in-out
+        -webkit-animation: slideintxtMobile 1.5s ease-in-out;
+                animation: slideintxtMobile 1.5s ease-in-out
     }
 }
