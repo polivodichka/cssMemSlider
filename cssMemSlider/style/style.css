@@ -143,12 +143,12 @@ body {
     padding: min(4vh, 4vw);
     margin: 0  calc(min(2vh, 2vw) * -1);
     outline: min(1.4vh, 1.4vw)  solid black;
-    outline-offset: calc(min(4vh, 4vw) * -1);
+    outline-offset: calc(min(4.5vh, 4.5vw) * -1);
 }
 
 .navigation__button:hover {
     outline: min(1.4vh, 1.4vw)  solid rgb(161, 219, 255);
-    outline-offset: calc(min(4vh, 4vw) * -1)
+    outline-offset: calc(min(4.5vh, 4.5vw) * -1)
 }
 
 .navigation__button:active {
