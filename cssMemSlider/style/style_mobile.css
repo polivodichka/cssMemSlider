@@ -1,0 +1,77 @@
+@media screen and (max-width: 768px), screen and (max-height: 500px) {
+
+    .slider {
+        max-width: min(calc(80vh + min(4vh, 4vw) ), calc(80vw + min(4vh, 4vw) ));
+        height: min(88vh, 88vw);
+    }
+
+    .slides {
+        height: 100%;
+    }
+
+    .slide {
+        height: calc(100% - min(4vh, 4vw) );
+        min-width: min(80vh, 80vw);
+    }
+
+    .slide__mem {
+        height: calc(80% - min(2vh, 2vw) );
+        width: min(80vh, 80vw);
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
+    }
+
+    .slide__mem img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .slide__description {
+        max-width: 100%;
+        height: 20%;
+        -webkit-transform: translate(0px, 28px);
+            -ms-transform: translate(0px, 28px);
+                transform: translate(0px, 28px);
+    }
+
+    .navigation {
+        text-align: center;
+        height: 10%;
+        -webkit-transform: translate(0px, calc(-200% - min(2vh, 2vw) ));
+            -ms-transform: translate(0px, calc(-200% - min(2vh, 2vw) ));
+                transform: translate(0px, calc(-200% - min(2vh, 2vw) ));
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .navigation .navigation__button {
+        margin: 0 0;
+        padding: min(4vh, 4vw) ;
+    }
+
+    #mem1:target~.navigation .navigation__button:first-child,
+    #mem2:target~.navigation .navigation__button:nth-child(2),
+    #mem3:target~.navigation .navigation__button:nth-child(3),
+    #mem4:target~.navigation .navigation__button:nth-child(4),
+    #mem5:target~.navigation .navigation__button:nth-child(5),
+    #mem6:target~.navigation .navigation__button:nth-child(6),
+    #mem7:target~.navigation .navigation__button:nth-child(7),
+    #mem8:target~.navigation .navigation__button:nth-child(8) {
+
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #mem1:target~.slides #description1,
+    #mem2:target~.slides #description2,
+    #mem3:target~.slides #description3,
+    #mem4:target~.slides #description4,
+    #mem5:target~.slides #description5,
+    #mem6:target~.slides #description6,
+    #mem7:target~.slides #description7,
+    #mem8:target~.slides #description8 {
+        -webkit-animation: slideintxtMobile 1.5s ease-in-out;
+                animation: slideintxtMobile 1.5s ease-in-out
+    }
+}

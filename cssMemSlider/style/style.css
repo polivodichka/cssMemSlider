@@ -1,0 +1,260 @@
+@font-face {
+    font-family: 'caviar';
+    src: url("../assets/fonts/caviar-dreams.ttf");
+}
+
+body,
+html {
+    font-family: "caviar";
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background:
+        -o-radial-gradient(black min(0.6vh, 0.6vw) , transparent 4px),
+        -o-radial-gradient(black min(0.6vh, 0.6vw) , transparent 4px),
+        -o-linear-gradient(#fff 4px, transparent 0),
+        -o-linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px , transparent 109px),
+        -o-linear-gradient(135deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px , transparent 78px, transparent 109px),
+        #fff;
+    background:
+        radial-gradient(black min(0.6vh, 0.6vw) , transparent 4px),
+        radial-gradient(black min(0.6vh, 0.6vw) , transparent 4px),
+        linear-gradient(#fff 4px, transparent 0),
+        linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px , transparent 109px),
+        linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px , transparent 78px, transparent 109px),
+        #fff;
+    background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+.slider {
+    overflow: hidden;
+    max-width: min(calc(80vh + min(4vh, 4vw) ), calc(80vw + min(4vh, 4vw) ));
+    height: min(88vh, 88vw);
+    border-radius: 9px;
+    border: min(0.6vh, 0.6vw)  solid black;
+    background-color: #fff;
+}
+
+.slides {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    -o-transition: transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    position: relative;
+}
+
+.slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: min(2vh, 2vw) ;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    z-index: -1;
+    height: calc(100% - min(4vh, 4vw) );
+    min-width: min(80vh, 80vw);
+}
+
+.slide__mem {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: calc(85% - min(2vh, 2vw) );
+    width: min(80vh, 80vw);
+    border-width: 1px;
+    border-color: #a4a4a4;
+    border-style: none dashed;
+}
+
+.slide__mem img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.slide__description {
+    margin-top: min(2vh, 2vw) ;
+    max-width: 50%;
+    font-size: 1rem;
+    height: 15%;
+    -webkit-transition: text-align 0.5s ease,
+        margin 0.5s ease;
+    -o-transition: text-align 0.5s ease,
+        margin 0.5s ease;
+    transition: text-align 0.5s ease,
+        margin 0.5s ease;
+}
+
+/* кнопки навигации*/
+.navigation {
+    z-index: 15;
+    width: 50%;
+    text-align: right;
+    margin: auto 0;
+    height: 15%;
+    -webkit-transform: translate(calc(100% - min(2vh, 2vw) ), calc(-100% - min(2vh, 2vw) ));
+        -ms-transform: translate(calc(100% - min(2vh, 2vw) ), calc(-100% - min(2vh, 2vw) ));
+            transform: translate(calc(100% - min(2vh, 2vw) ), calc(-100% - min(2vh, 2vw) ));
+    -webkit-transition: translate 0.2s ease-in-out;
+    -o-transition: translate 0.2s ease-in-out;
+    transition: translate 0.2s ease-in-out;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.navigation .navigation__button {
+    border-radius: 50%;
+    font-size: 0;
+    padding: min(4vh, 4vw);
+    margin: 0  calc(min(2vh, 2vw) * -1);
+    outline: min(1.4vh, 1.4vw)  solid black;
+    outline-offset: calc(min(4.5vh, 4.5vw) * -1);
+}
+
+.navigation__button:hover {
+    outline: min(1.4vh, 1.4vw)  solid rgb(161, 219, 255);
+    outline-offset: calc(min(4.5vh, 4.5vw) * -1)
+}
+
+.navigation__button:active {
+    outline: min(0.6vh, 0.6vw)  solid rgb(161, 219, 255);
+    margin-left: calc(min(2vh, 2vw) * -1);
+    margin-right: calc(min(2vh, 2vw) * -1);
+    padding: min(4vh, 4vw) ;
+    outline-offset: calc(min(3.2vh, 3.2vw) * -1);
+}
+
+
+#mem1:target~.navigation .navigation__button:first-child,
+#mem2:target~.navigation .navigation__button:nth-child(2),
+#mem3:target~.navigation .navigation__button:nth-child(3),
+#mem4:target~.navigation .navigation__button:nth-child(4),
+#mem5:target~.navigation .navigation__button:nth-child(5),
+#mem6:target~.navigation .navigation__button:nth-child(6),
+#mem7:target~.navigation .navigation__button:nth-child(7),
+#mem8:target~.navigation .navigation__button:nth-child(8) {
+    outline: min(0.6vh, 0.6vw)  solid black;
+    margin-left: calc(min(2vh, 2vw) * -1);
+    margin-right: calc(min(2vh, 2vw) * -1);
+    padding: min(4vh, 4vw) ;
+    outline-offset: calc(min(3.2vh, 3.2vw) * -1);
+}
+
+#mem1:target~.navigation .navigation__button:first-child:hover,
+#mem2:target~.navigation .navigation__button:nth-child(2):hover,
+#mem3:target~.navigation .navigation__button:nth-child(3):hover,
+#mem4:target~.navigation .navigation__button:nth-child(4):hover,
+#mem5:target~.navigation .navigation__button:nth-child(5):hover,
+#mem6:target~.navigation .navigation__button:nth-child(6):hover,
+#mem7:target~.navigation .navigation__button:nth-child(7):hover,
+#mem8:target~.navigation .navigation__button:nth-child(8):hover {
+    outline: min(1.4vh, 1.4vw)  solid rgb(161, 219, 255);
+    outline-offset: calc(min(4vh, 4vw) * -1)
+}
+
+#mem1:target~.slides #memo1,
+#mem2:target~.slides #memo2,
+#mem3:target~.slides #memo3,
+#mem4:target~.slides #memo4,
+#mem5:target~.slides #memo5,
+#mem6:target~.slides #memo6,
+#mem7:target~.slides #memo7,
+#mem8:target~.slides #memo8 {
+    -webkit-animation: slidein 1.5s ease-in-out;
+            animation: slidein 1.5s ease-in-out
+}
+
+#mem1:target~.slides #description1,
+#mem2:target~.slides #description2,
+#mem3:target~.slides #description3,
+#mem4:target~.slides #description4,
+#mem5:target~.slides #description5,
+#mem6:target~.slides #description6,
+#mem7:target~.slides #description7,
+#mem8:target~.slides #description8 {
+    -webkit-animation: slideintxt 1.5s ease-in-out;
+            animation: slideintxt 1.5s ease-in-out
+}
+
+#mem1:target~.slides {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0)
+}
+
+#mem2:target~.slides {
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%)
+}
+
+#mem3:target~.slides {
+    -webkit-transform: translateX(-200%);
+        -ms-transform: translateX(-200%);
+            transform: translateX(-200%)
+}
+
+#mem4:target~.slides {
+    -webkit-transform: translateX(-300%);
+        -ms-transform: translateX(-300%);
+            transform: translateX(-300%)
+}
+
+#mem5:target~.slides {
+    -webkit-transform: translateX(-400%);
+        -ms-transform: translateX(-400%);
+            transform: translateX(-400%)
+}
+
+#mem6:target~.slides {
+    -webkit-transform: translateX(-500%);
+        -ms-transform: translateX(-500%);
+            transform: translateX(-500%)
+}
+
+#mem7:target~.slides {
+    -webkit-transform: translateX(-600%);
+        -ms-transform: translateX(-600%);
+            transform: translateX(-600%)
+}
+
+#mem8:target~.slides {
+    -webkit-transform: translateX(-700%);
+        -ms-transform: translateX(-700%);
+            transform: translateX(-700%)
+}
